@@ -1,7 +1,13 @@
 class Solution {
     public int lengthOfLastWord(String s) {
-        //char[] arr= s.toCharArray(); to convert individual letters into array
-        String[] words=s.trim().split("\\s+"); //.split() removes the rest of the spaces as well
-        return words[words.length-1].length();
+        int i=s.length()-1;
+        while(i>=0 && s.charAt(i)==' '){
+            --i;
+        }
+        final int lastInd=i;
+        while(i>=0 && s.charAt(i)!=' '){
+            --i;
+        }
+        return lastInd-i;
     }
 }
