@@ -17,13 +17,11 @@ public class Solution {
          {
           
          
-            if(dup.contains(temp))
+            if (!dup.add(temp)) {
                 return true;
-             else{ 
-                
+                }
               dup.add(temp);
-              
-             }   
+             
             temp=temp.next;
              
          }
